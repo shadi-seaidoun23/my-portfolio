@@ -128,7 +128,7 @@ const Index = () => {
         <Button 
           size="lg" 
           className="rounded-full w-16 h-16 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-          onClick={() => window.location.href = 'mailto:shadi.seaidoun@example.com'}
+          onClick={() => window.location.href = 'mailto:shadiseaidoun@gmail.com'}
         >
           <Mail className="w-6 h-6" />
         </Button>
