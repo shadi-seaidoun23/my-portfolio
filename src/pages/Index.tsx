@@ -68,13 +68,13 @@ const Index = () => {
       <section className="relative py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Avatar Placeholder */}
-          <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-primary to-accent shadow-2xl animate-fade-in flex items-center justify-center">
+          <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-primary shadow-2xl animate-fade-in flex items-center justify-center">
             <span className="text-4xl font-bold text-primary-foreground">SS</span>
           </div>
           
           {/* Introduction */}
           <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
               Hi! My name is Shadi Seaidoun
             </h1>
             <div className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
