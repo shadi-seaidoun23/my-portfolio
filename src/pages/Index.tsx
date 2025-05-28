@@ -1,21 +1,21 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, Download, Mail, MapPin, Calendar, Star, Zap, Users, TrendingUp } from "lucide-react";
+import { Github, Linkedin, Download, Mail, MapPin, Calendar, Star, Zap, Users, TrendingUp, FileText, GraduationCap } from "lucide-react";
 import { useState, useEffect } from "react";
 import TypedText from "@/components/TypedText";
 import ResumeCard from "@/components/ResumeCard";
 import SkillsSection from "@/components/SkillsSection";
 import WorkStatusToggle from "@/components/WorkStatusToggle";
 import ThemeToggle from "@/components/ThemeToggle";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
   const [achievementCounts, setAchievementCounts] = useState({
-    projects: 0,
-    users: 0,
-    uptime: 0
+    experience: 0,
+    requests: 0,
+    performance: 0
   });
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const Index = () => {
   useEffect(() => {
     const animateCounters = () => {
       const duration = 2000;
-      const targets = { projects: 25, users: 60000, uptime: 99.9 };
+      const targets = { experience: 3, requests: 1000, performance: 76 };
       const startTime = Date.now();
 
       const updateCounters = () => {
@@ -35,9 +35,9 @@ const Index = () => {
         const progress = Math.min(elapsed / duration, 1);
         
         setAchievementCounts({
-          projects: Math.floor(targets.projects * progress),
-          users: Math.floor(targets.users * progress),
-          uptime: Math.floor(targets.uptime * progress * 100) / 100
+          experience: Math.floor(targets.experience * progress),
+          requests: Math.floor(targets.requests * progress),
+          performance: Math.floor(targets.performance * progress * 100) / 100
         });
 
         if (progress < 1) {
@@ -54,9 +54,11 @@ const Index = () => {
 
   const typingPhrases = [
     "Graduated from Western Computer Science with Honors",
-    "Work in automating processes with the Government of Canada",
-    "Integrated a POS payment system with TireNow",
-    "Built systems serving 60,000+ users daily"
+    "Created automated document processing workflows for government operations",
+    "Automated business workflows using Power Automate and SharePoint",
+    "Led a team of 5 students at Shared Services Canada",
+    "Built interactive visualization systems with C++ and OpenGL",
+    "Optimized NP-hard computational problems through innovative approaches"
   ];
 
   const educationData = [
@@ -64,49 +66,55 @@ const Index = () => {
       id: "western-cs",
       title: "Bachelor of Computer Science",
       subtitle: "University of Western Ontario",
-      duration: "2018 - 2022",
+      duration: "2021 - 2025",
       description: [
-        "🎓 Graduated with Honors distinction (Dean's List: 2020, 2021, 2022)",
+        "🎓 Graduated with Honors distinction (Dean's List: 2023, 2024)",
         "🔬 Specialized in Software Engineering and Advanced Algorithms",
-        "📚 Core Coursework: Data Structures & Algorithms, Software Engineering Principles, Database Systems, Computer Networks, Operating Systems, Computer Graphics",
-        "🏆 Participated in 8+ hackathons and programming competitions (2 wins, 3 top-3 finishes)",
-        "👥 Active member of Computer Science Society - organized tech talks and coding workshops",
-        "🧠 Capstone Project: Developed a distributed file system with 99.9% uptime using Java and Docker",
-        "💡 Academic Research: Published paper on 'Optimizing Graph Algorithms for Social Network Analysis'",
-        "🎯 GPA: 3.8/4.0 - Consistent academic excellence throughout degree"
+        "📚 Core Coursework: Data Structures & Algorithms, Machine Learning/AI, Databases, Computer Networks, Operating Systems, Computer Graphics, Computer Architecture",
+        "🧠 Capstone Project: Built interactive 3D visualization system with C++, OpenGL, GLFW, GLM and ImGui, achieving 76% performance boost via parallelization",
+        "💡 Academic Research: Authored research on 'Shortest Path Between Two Points in 3D space in the Presence of Obstacles'"
+      ]
+    },
+    {
+      id: "western-math",
+      title: "Minor in Mathematics",
+      subtitle: "University of Western Ontario",
+      duration: "2021 - 2025",
+      description: [
+        "🎓 Graduated with Honors distinction (Dean's List: 2023, 2024)",
+        "📚 Core Coursework: Calculus, Linear Algebra, Probability & Statistics, Discrete Math"
       ]
     }
   ];
 
   const workData = [
     {
-      id: "gov-canada",
-      title: "Software Developer",
-      subtitle: "Government of Canada",
-      duration: "2022 - Present",
+      id: "shared-services-canada",
+      title: "Team Lead / Cloud Data Analyst",
+      subtitle: "Shared Services Canada",
+      duration: "Jul 2022 - Apr 2025",
       description: [
-        "🚀 Architected and deployed automated workflow systems serving 10,000+ users, improving process efficiency by 40% and reducing manual processing time from 8 hours to 2 hours",
-        "⚛️ Built scalable internal tools using React, TypeScript, and Node.js for critical department operations, handling 50,000+ transactions daily",
-        "🤝 Led cross-functional teams of 8+ developers, designers, and analysts to implement digital transformation initiatives worth $2M+ budget",
-        "☁️ Migrated 15+ legacy COBOL systems to modern microservices architecture using Docker, Kubernetes, and AWS, reducing infrastructure costs by 35%",
-        "🔒 Ensured strict compliance with government security standards (PBMM/Protected B) and WCAG 2.1 AA accessibility requirements",
-        "📊 Implemented comprehensive monitoring and logging systems, reducing system downtime by 60% and improving incident response time",
-        "🛠️ Tech Stack: React, TypeScript, Node.js, Python, PostgreSQL, Docker, Kubernetes, AWS, Jenkins CI/CD"
+        "👥 Led a team of 5 students, ensuring task completion and providing support to maintain productivity and quality standards",
+        "📊 Conducted weekly touchpoints to monitor progress, address challenges, and align efforts with project goals",
+        "🤖 Automated business request handling by pulling data from BITS database as Excel files and using Power Automate to transfer data to SharePoint lists",
+        "📋 Developed Microsoft Forms workflow that generates SharePoint folders upon submission and organizes required signing documents",
+        "📈 Created real-time status tracking system using MS Lists for candidate document processing",
+        "🔔 Implemented automated notification system to alert managers of new business requests",
+        "🛠️ Tech Stack: Power Automate, SharePoint, Microsoft Forms, Excel, MS Lists, BITS Database"
       ]
     },
     {
-      id: "tirenow",
-      title: "Full Stack Developer",
-      subtitle: "TireNow",
-      duration: "2021 - 2022",
+      id: "private-tutoring",
+      title: "Private Tutoring Instructor",
+      subtitle: "Private Tutoring Services",
+      duration: "Jul 2024 - Aug 2024",
       description: [
-        "💳 Successfully integrated Stripe POS payment system into existing e-commerce platform, processing $500K+ in monthly transactions with 99.9% uptime",
-        "📦 Developed real-time inventory management system using React and Socket.io, reducing stock discrepancies by 30% and preventing $50K+ in lost sales",
-        "🖥️ Built comprehensive customer portal for order tracking and service history, improving customer satisfaction scores by 25%",
-        "📱 Implemented responsive design ensuring seamless mobile compatibility across iOS and Android devices, increasing mobile conversions by 40%",
-        "🎨 Collaborated closely with UI/UX team to redesign customer experience, resulting in 20% increase in customer retention",
-        "⚡ Optimized database queries and implemented Redis caching, improving page load times by 50%",
-        "🔧 Tech Stack: React, JavaScript, Node.js, Express, MongoDB, Stripe API, Socket.io, Redis, Heroku"
+        "📚 Conducted one-on-one tutoring sessions for university students in Calculus 2, covering integration techniques, sequences, series, parametric equations and polar coordinates",
+        "📋 Organized weekly study plans tailored to students requiring individualized attention to ensure comprehension of key concepts",
+        "⏰ Developed time management strategies to help students stay on task and work efficiently",
+        "📊 Created assessments and evaluations to track student progression and identify areas needing improvement",
+        "🔄 Modified future study programs based on assessment results and student feedback",
+        "🎯 Ensured all students maintained academic progress through personalized learning approaches"
       ]
     }
   ];
@@ -138,16 +146,18 @@ const Index = () => {
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
           {/* Avatar with enhanced styling */}
-          <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-primary to-accent shadow-2xl animate-fade-in flex items-center justify-center relative overflow-hidden group">
-            <span className="text-4xl font-bold text-primary-foreground relative z-10">SS</span>
-            <div className="absolute inset-0 bg-gradient-to-br from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="mb-8 flex justify-center">
+            <Avatar className="w-40 h-40 border-4 border-primary/20">
+              <AvatarImage src="/profile-picture.png" alt="Shadi Seaidoun" className="object-cover" />
+              <AvatarFallback className="text-4xl font-bold text-primary-foreground">SS</AvatarFallback>
+            </Avatar>
           </div>
           
           {/* Location & Availability Badge */}
           <div className="flex justify-center items-center gap-4 mb-6">
             <Badge variant="outline" className="gap-2 px-4 py-2 border-primary/30">
               <MapPin className="w-4 h-4" />
-              London, Ontario
+              Barrie, Ontario
             </Badge>
             <Badge variant="outline" className="gap-2 px-4 py-2 border-accent/30">
               <Calendar className="w-4 h-4" />
@@ -171,35 +181,35 @@ const Index = () => {
           <div className="grid grid-cols-3 gap-8 mb-12 animate-slide-up">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                {achievementCounts.projects}+
+                {achievementCounts.experience}+
               </div>
               <div className="text-sm text-muted-foreground flex items-center justify-center gap-1">
                 <Zap className="w-4 h-4" />
-                Projects Delivered
+                Years of Experience
               </div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                {achievementCounts.users.toLocaleString()}+
+                {achievementCounts.requests.toLocaleString()}+
               </div>
               <div className="text-sm text-muted-foreground flex items-center justify-center gap-1">
                 <Users className="w-4 h-4" />
-                Users Served
+                Business Requests Automated
               </div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                {achievementCounts.uptime}%
+                {achievementCounts.performance}%
               </div>
               <div className="text-sm text-muted-foreground flex items-center justify-center gap-1">
                 <TrendingUp className="w-4 h-4" />
-                System Uptime
+                Performance Improvement
               </div>
             </div>
           </div>
 
           {/* Enhanced Social Links */}
-          <div className="flex justify-center gap-4 mb-8 animate-slide-up">
+          <div className="flex flex-wrap justify-center gap-4 mb-8 animate-slide-up">
             <Button 
               variant="outline" 
               size="lg" 
@@ -213,25 +223,31 @@ const Index = () => {
               variant="outline" 
               size="lg" 
               className="gap-2 hover:scale-105 transition-all duration-300 hover:bg-primary hover:text-primary-foreground border-primary/30"
-              onClick={() => window.open('https://linkedin.com/in/shadi-seaidoun', '_blank')}
+              onClick={() => window.open('https://linkedin.com/in/shadiseaidoun', '_blank')}
             >
               <Linkedin className="w-5 h-5" />
               LinkedIn
             </Button>
             <Button 
-              variant="default" 
+              variant="outline" 
               size="lg" 
               className="gap-2 hover:scale-105 transition-all duration-300 shadow-lg"
+              onClick={() => window.open('/ShadiSeaidounCV.pdf', '_blank')}
             >
-              <Download className="w-5 h-5" />
-              Download Resume
+              <FileText className="w-5 h-5" />
+              Resume
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="gap-2 hover:scale-105 transition-all duration-300 hover:bg-primary hover:text-primary-foreground border-primary/30"
+              onClick={() => window.open('/Shadi_Seaidoun_Research_Paper.pdf', '_blank')}
+            >
+              <GraduationCap className="w-5 h-5" />
+              Research Paper
             </Button>
           </div>
 
-          {/* Work Status Toggle */}
-          <div className="max-w-md mx-auto mb-12">
-            <WorkStatusToggle />
-          </div>
         </div>
       </section>
 
@@ -246,10 +262,6 @@ const Index = () => {
         />
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4 px-4 py-2 border-primary/30">
-              <Star className="w-4 h-4 mr-2" />
-              Professional Journey
-            </Badge>
             <h2 className="text-3xl font-bold animate-fade-in bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
               Professional Background
             </h2>
@@ -266,7 +278,7 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section className="py-16 px-4 bg-muted/30 relative overflow-hidden">
+      <section className="py-16 px-4 relative overflow-hidden">
         <div 
           className="absolute inset-0 opacity-5"
           style={{
@@ -276,10 +288,6 @@ const Index = () => {
         />
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4 px-4 py-2 border-accent/30">
-              <Zap className="w-4 h-4 mr-2" />
-              Technical Expertise
-            </Badge>
             <h2 className="text-3xl font-bold animate-fade-in bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
               Skills & Technologies
             </h2>
@@ -289,15 +297,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="py-8 px-4 text-center border-t border-border">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-muted-foreground">
-            © 2024 Shadi Seaidoun. Built with React, TypeScript, and Tailwind CSS.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 };

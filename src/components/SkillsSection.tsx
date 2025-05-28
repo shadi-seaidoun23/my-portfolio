@@ -4,28 +4,27 @@ import { Badge } from "@/components/ui/badge";
 
 const SkillsSection = () => {
   const programmingLanguages = [
-    { name: "JavaScript", level: "Advanced" },
-    { name: "TypeScript", level: "Advanced" },
-    { name: "Python", level: "Intermediate" },
-    { name: "Java", level: "Intermediate" },
-    { name: "C++", level: "Intermediate" },
-    { name: "SQL", level: "Advanced" }
+    { name: "Python", level: "Advanced" },
+    { name: "Java", level: "Advanced" },
+    { name: "C", level: "Advanced" },
+    { name: "C++", level: "Advanced" },
+    { name: "SQL", level: "Intermediate" }
   ];
 
   const frameworks = [
-    { name: "React", level: "Advanced" },
-    { name: "Node.js", level: "Advanced" },
-    { name: "Express", level: "Intermediate" },
-    { name: "Django", level: "Intermediate" },
-    { name: "Spring Boot", level: "Intermediate" }
+    { name: "React", level: "Intermediate" },
+    { name: "Node.js", level: "Intermediate" },
+    { name: "OpenGL", level: "Intermediate" },
+    { name: "GLM", level: "Intermediate" },
+    { name: "GLFW", level: "Intermediate" }
   ];
 
   const tools = [
     { name: "Git", level: "Advanced" },
-    { name: "Docker", level: "Intermediate" },
-    { name: "AWS", level: "Intermediate" },
-    { name: "PostgreSQL", level: "Advanced" },
-    { name: "MongoDB", level: "Intermediate" }
+    { name: "Power Automate", level: "Advanced" },
+    { name: "Power BI", level: "Intermediate" },
+    { name: "Microsoft 365", level: "Advanced" },
+    { name: "Vercel", level: "Intermediate" }
   ];
 
   const languages = [
