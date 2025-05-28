@@ -38,12 +38,12 @@ const SkillsSection = () => {
     switch (level) {
       case "Advanced":
       case "Native":
-        return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200";
+        return "bg-primary/20 text-primary border-primary/30 font-semibold";
       case "Intermediate":
       case "Fluent":
-        return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200";
+        return "bg-accent/20 text-accent-foreground border-accent/30 font-medium";
       default:
-        return "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200";
+        return "bg-muted text-muted-foreground border-border";
     }
   };
 
@@ -57,7 +57,7 @@ const SkillsSection = () => {
           {programmingLanguages.map((lang) => (
             <div key={lang.name} className="flex items-center justify-between">
               <span className="text-sm font-medium">{lang.name}</span>
-              <Badge variant="secondary" className={getLevelColor(lang.level)}>
+              <Badge variant="outline" className={`border ${getLevelColor(lang.level)}`}>
                 {lang.level}
               </Badge>
             </div>
@@ -73,7 +73,7 @@ const SkillsSection = () => {
           {frameworks.map((framework) => (
             <div key={framework.name} className="flex items-center justify-between">
               <span className="text-sm font-medium">{framework.name}</span>
-              <Badge variant="secondary" className={getLevelColor(framework.level)}>
+              <Badge variant="outline" className={`border ${getLevelColor(framework.level)}`}>
                 {framework.level}
               </Badge>
             </div>
@@ -89,7 +89,7 @@ const SkillsSection = () => {
           {tools.map((tool) => (
             <div key={tool.name} className="flex items-center justify-between">
               <span className="text-sm font-medium">{tool.name}</span>
-              <Badge variant="secondary" className={getLevelColor(tool.level)}>
+              <Badge variant="outline" className={`border ${getLevelColor(tool.level)}`}>
                 {tool.level}
               </Badge>
             </div>
@@ -108,7 +108,7 @@ const SkillsSection = () => {
                 <span className="text-lg">{language.flag}</span>
                 <span className="text-sm font-medium">{language.name}</span>
               </div>
-              <Badge variant="secondary" className={getLevelColor(language.level)}>
+              <Badge variant="outline" className={`border ${getLevelColor(language.level)}`}>
                 {language.level}
               </Badge>
             </div>

@@ -6,76 +6,240 @@
 
 @layer base {
   :root {
-    --background: 255 255 255;
-    --foreground: 13 21 42;
-
+    --background: 248 248 255;
+    --foreground: 25 25 112;
     --card: 255 255 255;
-    --card-foreground: 13 21 42;
-
+    --card-foreground: 25 25 112;
     --popover: 255 255 255;
-    --popover-foreground: 13 21 42;
-
-    --primary: 13 21 42;
+    --popover-foreground: 25 25 112;
+    --primary: 25 25 112;
     --primary-foreground: 255 255 255;
-
-    --secondary: 248 250 252;
-    --secondary-foreground: 13 21 42;
-
-    --muted: 248 250 252;
-    --muted-foreground: 13 21 42;
-
-    --accent: 13 21 42;
+    --secondary: 241 245 249;
+    --secondary-foreground: 25 25 112;
+    --muted: 241 245 249;
+    --muted-foreground: 71 85 105;
+    --accent: 25 25 112;
     --accent-foreground: 255 255 255;
-
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
-
     --border: 226 232 240;
     --input: 226 232 240;
-    --ring: 13 21 42;
-
-    --radius: 0.75rem;
+    --ring: 25 25 112;
+    --radius: 0.5rem;
   }
 
   .dark {
-    --background: 13 21 42;
-    --foreground: 253 253 250;
-
-    --card: 13 21 42;
-    --card-foreground: 253 253 250;
-
-    --popover: 13 21 42;
-    --popover-foreground: 253 253 250;
-
-    --primary: 253 253 250;
-    --primary-foreground: 13 21 42;
-
-    --secondary: 30 41 59;
-    --secondary-foreground: 253 253 250;
-
-    --muted: 30 41 59;
-    --muted-foreground: 253 253 250;
-
-    --accent: 253 253 250;
-    --accent-foreground: 13 21 42;
-
+    --background: 25 25 112;
+    --foreground: 248 250 252;
+    --card: 30 41 59;
+    --card-foreground: 248 250 252;
+    --popover: 30 41 59;
+    --popover-foreground: 248 250 252;
+    --primary: 147 197 253;
+    --primary-foreground: 15 23 42;
+    --secondary: 51 65 85;
+    --secondary-foreground: 248 250 252;
+    --muted: 51 65 85;
+    --muted-foreground: 148 163 184;
+    --accent: 99 102 241;
+    --accent-foreground: 248 250 252;
     --destructive: 239 68 68;
-    --destructive-foreground: 253 253 250;
-
-    --border: 51 65 85;
-    --input: 51 65 85;
-    --ring: 253 253 250;
+    --destructive-foreground: 248 250 252;
+    --border: 71 85 105;
+    --input: 71 85 105;
+    --ring: 147 197 253;
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
-
   body {
-    @apply bg-background text-foreground font-['Inter'];
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: Inter, sans-serif;
   }
+}
+
+/* FORCE ALL THEME STYLES - NUCLEAR OPTION */
+
+/* Light mode - force everything */
+html.light,
+html:not(.dark) {
+  --background: 248 248 255 !important;
+  --foreground: 25 25 112 !important;
+  --primary: 25 25 112 !important;
+  --primary-foreground: 255 255 255 !important;
+  --card: 255 255 255 !important;
+  --card-foreground: 25 25 112 !important;
+  --muted: 241 245 249 !important;
+  --muted-foreground: 71 85 105 !important;
+  --border: 226 232 240 !important;
+}
+
+html.light *,
+html:not(.dark) * {
+  color: rgb(25, 25, 112) !important;
+}
+
+html.light body,
+html:not(.dark) body,
+html.light #root,
+html:not(.dark) #root,
+html.light .min-h-screen,
+html:not(.dark) .min-h-screen {
+  background-color: rgb(248, 248, 255) !important;
+  color: rgb(25, 25, 112) !important;
+}
+
+html.light .bg-background,
+html:not(.dark) .bg-background {
+  background-color: rgb(248, 248, 255) !important;
+}
+
+html.light .text-foreground,
+html:not(.dark) .text-foreground {
+  color: rgb(25, 25, 112) !important;
+}
+
+html.light .text-muted-foreground,
+html:not(.dark) .text-muted-foreground {
+  color: rgb(71, 85, 105) !important;
+}
+
+html.light .text-primary,
+html:not(.dark) .text-primary {
+  color: rgb(25, 25, 112) !important;
+}
+
+html.light .bg-primary,
+html:not(.dark) .bg-primary {
+  background-color: rgb(25, 25, 112) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+/* Dark mode - force everything to midnight blue and off-white only */
+html.dark {
+  --background: 25 25 112 !important;
+  --foreground: 248 248 255 !important;
+  --primary: 248 248 255 !important;
+  --primary-foreground: 25 25 112 !important;
+  --card: 35 35 120 !important;
+  --card-foreground: 248 248 255 !important;
+  --muted: 45 45 130 !important;
+  --muted-foreground: 200 200 240 !important;
+  --border: 80 80 180 !important;
+  --accent: 248 248 255 !important;
+  --accent-foreground: 25 25 112 !important;
+  --secondary: 50 50 140 !important;
+  --secondary-foreground: 248 248 255 !important;
+}
+
+html.dark *:not(svg) {
+  color: rgb(248, 248, 255) !important;
+}
+
+html.dark body,
+html.dark #root,
+html.dark .min-h-screen {
+  background-color: rgb(25, 25, 112) !important;
+  color: rgb(248, 248, 255) !important;
+}
+
+html.dark .bg-background {
+  background-color: rgb(25, 25, 112) !important;
+}
+
+html.dark .text-foreground {
+  color: rgb(248, 248, 255) !important;
+}
+
+html.dark .text-muted-foreground {
+  color: rgb(200, 200, 240) !important;
+}
+
+html.dark .text-primary {
+  color: rgb(248, 248, 255) !important;
+}
+
+html.dark .bg-primary {
+  background-color: rgb(248, 248, 255) !important;
+  color: rgb(25, 25, 112) !important;
+}
+
+html.dark .bg-accent {
+  background-color: rgb(248, 248, 255) !important;
+  color: rgb(25, 25, 112) !important;
+}
+
+html.dark .text-accent-foreground {
+  color: rgb(25, 25, 112) !important;
+}
+
+/* Force card backgrounds */
+html.light .bg-card,
+html:not(.dark) .bg-card {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+html.dark .bg-card {
+  background-color: rgb(35, 35, 120) !important;
+}
+
+/* Force muted backgrounds */
+html.light .bg-muted,
+html:not(.dark) .bg-muted {
+  background-color: rgb(241, 245, 249) !important;
+}
+
+html.dark .bg-muted {
+  background-color: rgb(45, 45, 130) !important;
+}
+
+/* Force ALL border colors to be consistent */
+html.dark .border,
+html.dark .border-border,
+html.dark .border-primary,
+html.dark .border-accent {
+  border-color: rgb(80, 80, 180) !important;
+}
+
+html.light .border,
+html.light .border-border,
+html.light .border-primary,
+html.light .border-accent,
+html:not(.dark) .border,
+html:not(.dark) .border-border,
+html:not(.dark) .border-primary,
+html:not(.dark) .border-accent {
+  border-color: rgb(25, 25, 112) !important;
+}
+
+/* Force ALL badge colors */
+html.dark .bg-primary\/20,
+html.dark .bg-accent\/20,
+html.dark [class*="bg-primary"],
+html.dark [class*="bg-accent"],
+html.dark .badge {
+  background-color: rgb(60, 60, 150) !important;
+  color: rgb(248, 248, 255) !important;
+  border-color: rgb(80, 80, 180) !important;
+}
+
+html.light .bg-primary\/20,
+html.light .bg-accent\/20,
+html.light [class*="bg-primary"],
+html.light [class*="bg-accent"],
+html.light .badge,
+html:not(.dark) .bg-primary\/20,
+html:not(.dark) .bg-accent\/20,
+html:not(.dark) [class*="bg-primary"],
+html:not(.dark) [class*="bg-accent"],
+html:not(.dark) .badge {
+  background-color: rgb(230, 230, 250) !important;
+  color: rgb(25, 25, 112) !important;
+  border-color: rgb(25, 25, 112) !important;
 }
 
 .typing-cursor::after {
@@ -86,4 +250,28 @@
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+  50% { box-shadow: 0 0 30px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--primary) / 0.3); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
 }
