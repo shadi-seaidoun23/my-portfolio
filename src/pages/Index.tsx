@@ -214,7 +214,7 @@ const Index = () => {
               variant="outline" 
               size="lg" 
               className="gap-2 hover:scale-105 transition-all duration-300 hover:bg-primary hover:text-primary-foreground border-primary/30"
-              onClick={() => window.open('https://github.com/shadi-seaidoun', '_blank')}
+              onClick={() => window.open('https://github.com/shadi-seaidoun23', '_blank')}
             >
               <Github className="w-5 h-5" />
               GitHub
