@@ -28,9 +28,9 @@ const SkillsSection = () => {
   ];
 
   const languages = [
-    { name: "English", flag: "🇺🇸", level: "Native" },
-    { name: "French", flag: "🇫🇷", level: "Fluent" },
-    { name: "Arabic", flag: "🇸🇦", level: "Fluent" }
+    { name: "English", flag: "🇨🇦", level: "Native" },
+    { name: "French", flag: "🇨🇦", level: "Fluent" },
+    { name: "Arabic", flag: "🇱🇧", level: "Fluent" }
   ];
 
   const getLevelColor = (level: string) => {
