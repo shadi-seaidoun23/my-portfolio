@@ -232,7 +232,7 @@ const Index = () => {
               variant="outline" 
               size="lg" 
               className="gap-2 hover:scale-105 transition-all duration-300 shadow-lg"
-              onClick={() => window.open('/ShadiSeaidounCV.pdf', '_blank')}
+              onClick={() => window.open('/resume.html', '_blank')}
             >
               <FileText className="w-5 h-5" />
               Resume
@@ -241,7 +241,7 @@ const Index = () => {
               variant="outline" 
               size="lg" 
               className="gap-2 hover:scale-105 transition-all duration-300 hover:bg-primary hover:text-primary-foreground border-primary/30"
-              onClick={() => window.open('/Shadi_Seaidoun_Research_Paper.pdf', '_blank')}
+              onClick={() => window.open('/research-paper.html', '_blank')}
             >
               <GraduationCap className="w-5 h-5" />
               Research Paper
