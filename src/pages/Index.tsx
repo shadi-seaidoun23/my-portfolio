@@ -224,7 +224,7 @@ const Index = () => {
               </div>
               <div className="text-sm text-muted-foreground flex items-center justify-center gap-1">
                 <TrendingUp className="w-4 h-4" />
-                Delivery Efficiency
+                Performance Improvement
               </div>
             </div>
           </div>
