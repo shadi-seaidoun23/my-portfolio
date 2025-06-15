@@ -27,7 +27,11 @@ const Index = () => {
   useEffect(() => {
     const animateCounters = () => {
       const duration = 2000;
-      const targets = { experience: 3, requests: 1000, performance: 76 };
+      const targets = { 
+        experience: 3,  // Total years of experience
+        routes: 500,  // Number of delivery routes optimized
+        performance: 85 // Performance improvement percentage
+      };
       const startTime = Date.now();
 
       const updateCounters = () => {
@@ -36,7 +40,7 @@ const Index = () => {
         
         setAchievementCounts({
           experience: Math.floor(targets.experience * progress),
-          requests: Math.floor(targets.requests * progress),
+          requests: Math.floor(targets.routes * progress),
           performance: Math.floor(targets.performance * progress * 100) / 100
         });
 
@@ -54,11 +58,14 @@ const Index = () => {
 
   const typingPhrases = [
     "Graduated from Western Computer Science with Honors",
-    "Created automated document processing workflows for government operations",
-    "Automated business workflows using Power Automate and SharePoint",
-    "Led a team of 5 students at Shared Services Canada",
+    "Developed and optimized delivery route algorithms using Python to minimize travel time and fuel costs @ Sunrise Wholesale Produce",
+    "Integrated Google Maps API functionality with Python for real-time navigation and traffic analysis @ Sunrise Wholesale Produce",
+    "Automated inventory management system using Python and SQL for real-time stock monitoring @ Sunrise Wholesale Produce",
+    "Created automated document processing workflows for government operations @ Shared Services Canada",
+    "Automated business workflows using Power Automate and SharePoint @ Shared Services Canada",
+    "Led a team of 5 students @ Shared Services Canada",
     "Built interactive visualization systems with C++ and OpenGL",
-    "Optimized NP-hard computational problems through innovative approaches"
+    "Optimized NP-hard computational problems through innovative approaches",
   ];
 
   const educationData = [
@@ -104,10 +111,24 @@ const Index = () => {
       ]
     },
     {
+      id: "sunrise-swe",
+      title: "Software Engineer Intern",
+      subtitle: "Sunrise Wholesale Produce",
+      duration: "May 2024 - Apr 2025",
+      description: [
+        "🚚 Developed and optimized delivery route algorithms using Python to minimize travel time and fuel costs for produce distribution to restaurants and commercial clients",
+        "🗺️ Integrated Google Maps API functionality with Python to provide real-time navigation and traffic analysis for drivers",
+        "📊 Automated inventory management system using Python and SQL to monitor stock levels and generate real-time alerts",
+        "⚡ Improved operational efficiency and reduced delivery overhead through algorithmic optimization",
+        "🔄 Enabled proactive restocking and prevented supply chain disruptions for restaurant clients",
+        "🛠️ Tech Stack: Python, SQL, Google Maps API, REST APIs"
+      ]
+    },
+    {
       id: "private-tutoring",
       title: "Private Tutoring Instructor",
       subtitle: "Private Tutoring Services",
-      duration: "Jul 2024 - Aug 2024",
+      duration: "Jul 2024 - Sept 2024",
       description: [
         "📚 Conducted one-on-one tutoring sessions for university students in Calculus 2, covering integration techniques, sequences, series, parametric equations and polar coordinates",
         "📋 Organized weekly study plans tailored to students requiring individualized attention to ensure comprehension of key concepts",
@@ -194,7 +215,7 @@ const Index = () => {
               </div>
               <div className="text-sm text-muted-foreground flex items-center justify-center gap-1">
                 <Users className="w-4 h-4" />
-                Business Requests Automated
+                Delivery Routes Optimized
               </div>
             </div>
             <div className="text-center">
@@ -203,7 +224,7 @@ const Index = () => {
               </div>
               <div className="text-sm text-muted-foreground flex items-center justify-center gap-1">
                 <TrendingUp className="w-4 h-4" />
-                Performance Improvement
+                Delivery Efficiency
               </div>
             </div>
           </div>
