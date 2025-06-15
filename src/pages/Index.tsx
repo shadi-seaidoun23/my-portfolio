@@ -30,7 +30,7 @@ const Index = () => {
       const targets = { 
         experience: 3,  // Total years of experience
         routes: 500,  // Number of delivery routes optimized
-        performance: 85 // Performance improvement percentage
+        performance: 76 // Performance improvement percentage
       };
       const startTime = Date.now();
 
